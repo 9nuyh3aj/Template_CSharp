@@ -1,1 +1,1 @@
-{"Workflows":[{"FilePath":"00_Main.xaml","Activities":[]},{"FilePath":"02_WorkInit.xaml","Activities":[]},{"FilePath":"04_WorkDone.xaml","Activities":[]},{"FilePath":"COM_KillProcess.xaml","Activities":null}]}
+{"Workflows":[{"FilePath":"00_Main.xaml","Activities":[]},{"FilePath":"02_WorkInit.xaml","Activities":[]},{"FilePath":"04_WorkDone.xaml","Activities":[]},{"FilePath":"COM_KillProcess.xaml","Activities":[]},{"FilePath":"01_ReadConfig.xaml","Activities":[]},{"FilePath":"03_T01_Sample.xaml","Activities":[]},{"FilePath":"T01_GetMailMessages.xaml","Activities":null}]}
