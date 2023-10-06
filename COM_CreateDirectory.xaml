@@ -3,7 +3,7 @@
     <x:Property Name="i_config" Type="InArgument(scg:Dictionary(x:String, x:String))" />
   </x:Members>
   <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
-  <sap:VirtualizedContainerService.HintSize>1028,1922</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1185,1730</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -89,13 +89,13 @@
       <AssemblyReference>System.Private.Uri</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="COM_CreateDirectory" sap:VirtualizedContainerService.HintSize="532,1857" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="COM_CreateDirectory" sap:VirtualizedContainerService.HintSize="532,1665" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="490,1769" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="490,1577" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -103,40 +103,17 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <TryCatch.Try>
-        <Sequence sap:VirtualizedContainerService.HintSize="452,1541" sap2010:WorkflowViewState.IdRef="Sequence_3">
-          <Sequence.Variables>
-            <Variable x:TypeArguments="x:Boolean" Name="bol_inputPath" />
-            <Variable x:TypeArguments="x:Boolean" Name="bol_outputPath" />
-          </Sequence.Variables>
+        <Sequence sap:VirtualizedContainerService.HintSize="452,1349" sap2010:WorkflowViewState.IdRef="Sequence_3">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
           <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="410,90" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="Start Create Directory" />
-          <ui:FolderExistsX sap2010:Annotation.AnnotationText="Input Path" DisplayName="Folder Exists" sap:VirtualizedContainerService.HintSize="410,56" sap2010:WorkflowViewState.IdRef="FolderExistsX_1">
-            <ui:FolderExistsX.Exists>
-              <OutArgument x:TypeArguments="x:Boolean">
-                <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_2">bol_inputPath</CSharpReference>
-              </OutArgument>
-            </ui:FolderExistsX.Exists>
-            <ui:FolderExistsX.Path>
-              <InArgument x:TypeArguments="x:String">
-                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_10">System.IO.Path.Combine(i_config["RPA_Input"])</CSharpValue>
-              </InArgument>
-            </ui:FolderExistsX.Path>
-            <sap:WorkflowViewStateService.ViewState>
-              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                <x:Boolean x:Key="IsPinned">False</x:Boolean>
-              </scg:Dictionary>
-            </sap:WorkflowViewStateService.ViewState>
-          </ui:FolderExistsX>
           <If sap2010:Annotation.AnnotationText="Input Path 생성" sap:VirtualizedContainerService.HintSize="410,508" sap2010:WorkflowViewState.IdRef="If_1">
             <If.Condition>
               <InArgument x:TypeArguments="x:Boolean">
-                <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_12">!bol_inputPath</CSharpValue>
+                <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_19">!System.IO.Directory.Exists(System.IO.Path.Combine(i_config["RPA_Input"]))</CSharpValue>
               </InArgument>
             </If.Condition>
             <sap:WorkflowViewStateService.ViewState>
@@ -181,29 +158,10 @@
               <Sequence sap2010:WorkflowViewState.IdRef="Sequence_6" />
             </If.Else>
           </If>
-          <ui:FolderExistsX sap2010:Annotation.AnnotationText="Output Path" DisplayName="Folder Exists" sap:VirtualizedContainerService.HintSize="410,56" sap2010:WorkflowViewState.IdRef="FolderExistsX_2">
-            <ui:FolderExistsX.Exists>
-              <OutArgument x:TypeArguments="x:Boolean">
-                <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_3">bol_outputPath</CSharpReference>
-              </OutArgument>
-            </ui:FolderExistsX.Exists>
-            <ui:FolderExistsX.Path>
-              <InArgument x:TypeArguments="x:String">
-                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_11">System.IO.Path.Combine(i_config["RPA_Output"])</CSharpValue>
-              </InArgument>
-            </ui:FolderExistsX.Path>
-            <sap:WorkflowViewStateService.ViewState>
-              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                <x:Boolean x:Key="IsPinned">False</x:Boolean>
-              </scg:Dictionary>
-            </sap:WorkflowViewStateService.ViewState>
-          </ui:FolderExistsX>
           <If sap2010:Annotation.AnnotationText="Output Path 생성" sap:VirtualizedContainerService.HintSize="410,453" sap2010:WorkflowViewState.IdRef="If_2">
             <If.Condition>
               <InArgument x:TypeArguments="x:Boolean">
-                <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_13">!bol_outputPath</CSharpValue>
+                <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_20">!System.IO.Directory.Exists(System.IO.Path.Combine(i_config["RPA_Output"]))</CSharpValue>
               </InArgument>
             </If.Condition>
             <sap:WorkflowViewStateService.ViewState>
