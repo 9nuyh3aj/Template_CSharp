@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main" sap2010:ExpressionActivityEditor.ExpressionActivityEditor="C#" sap:VirtualizedContainerService.HintSize="1185,2255" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" sap2010:ExpressionActivityEditor.ExpressionActivityEditor="C#" sap:VirtualizedContainerService.HintSize="1185,2360" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -95,7 +95,7 @@
       <x:Boolean x:Key="ShouldCollapseAll">False</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence DisplayName="Main Project" sap:VirtualizedContainerService.HintSize="1063,2190" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Main Project" sap:VirtualizedContainerService.HintSize="1063,2295" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="scg:Dictionary(x:String, x:String)" Name="p_config" />
       <Variable x:TypeArguments="x:Int32" Name="p_int_retryCnt" />
@@ -107,7 +107,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:InvokeCode ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="ReadMe" Code="/*&#xD;&#xA;1. 네이밍 규칙&#xD;&#xA;&#x9;1) Project(메인프로젝트)&#xD;&#xA;&#x9;- Pascal표기법을 사용&#xD;&#xA;    - P(업무코드)+'_'+(영문자업무명요약)&#xD;&#xA;    &#x9;예&gt; 6차 프로젝트, 1번 과제&#xD;&#xA;               P0601_Template&#xD;&#xA;   &#xD;&#xA;&#x9;2) Sequence(하위 시퀀스)&#xD;&#xA;&#x9;- Pascal표기법을 사용하고 Type을 표시해준다.&#xD;&#xA;    - {작업순서}+'_'+{작업요약}&#xD;&#xA;    &#x9;예 &gt; T01_LoginHiworks&#xD;&#xA;        &#x9;T02_GetMailList&#xD;&#xA;          ...&#xD;&#xA;&#x9;- 작업순서를 지정 후(안정화 등)에 추가되는 동작이 있다면 추가로 작업순서를 표시해준다.&#xD;&#xA;    &#x9;예 &gt; T01_OpenHometax&#xD;&#xA;        &#x9;T01_01_ClearPopup // 예&gt; 안정화 단계에서 발생한 팝업 처리&#xD;&#xA;            T01_02_ExistsSystem // 예&gt; 재처리 로직 추가시 작업창 존재여부 추가&#xD;&#xA;            T02_...&#xD;&#xA;            &#xD;&#xA;&#x9;3) 변수&#xD;&#xA;    - snake 표기법과 Camel표기법을 사용하고 Type을 표시해준다.&#xD;&#xA;    - {Type} + '_' + {직관적으로 확인가능한 변수명}&#xD;&#xA;    &#x9;예&gt; string형 : str_urlHiworks&#xD;&#xA;        &#x9;int형 : int_totalRetryCount&#xD;&#xA;            DataTable형 : dt_exchangeRate&#xD;&#xA;&#x9;- 00_Main(메인프로젝트) 에서 사용 하는 변수는 앞에 &quot;p_&quot; 를 붙인다.&#xD;&#xA;&#x9;&#x9;예&gt; p_int_retryCnt&#xD;&#xA;&#xD;&#xA;&#x9;4) 인수&#xD;&#xA;    - Argument 로 전달받는 변수는 Direction 표시해준다.&#xD;&#xA;    - {i/o} + '_' + {Type} + '_' + {직관적으로 확인가능한 변수명}&#xD;&#xA;    &#x9;예&gt; in : i_int_retryCount&#xD;&#xA;        &#x9;out : o_str_resultCode&#xD;&#xA;&#x9;&#x9;&#x9;in/out : io_str_typeCode&#xD;&#xA;   &#xD;&#xA;&#x9;5) config&#xD;&#xA;&#x9;- Key &gt; Pascal표기법을 사용&#xD;&#xA;&#x9;예 &gt; Rpa_Input (직관적으로 확인가능한 변수명)&#xD;&#xA;    - Comment &gt; Key, Value 값에 대한 주석 입력&#xD;&#xA;&#xD;&#xA;&#x9;6) Asset&#xD;&#xA;   &#x9;- {직관적으로 확인가능한 변수명}&#xD;&#xA;   &#x9;- Asset 추가 필요할 경우 개발/운영팀 협의 하에 추가&#xD;&#xA;   &#xD;&#xA;&#x9;7) Activity(액티비티 명)&#xD;&#xA;    - 액티비티에 주석으로 기입&#xD;&#xA;&#x9;- 동작을 명시&#xD;&#xA;    &#x9;예&gt; 메일쓰기, 엑셀읽기&#xD;&#xA;&#xD;&#xA;   8) Queue&#xD;&#xA;      -. 업무코드와 업무명을 표현해준다.&#xD;&#xA;      -. P{업무코드}+'_'+{업무명요약}&#xD;&#xA;         예&gt; P0601_Template&#xD;&#xA;*/" DisplayName="ReadMe" sap:VirtualizedContainerService.HintSize="1021,196" sap2010:WorkflowViewState.IdRef="InvokeCode_1" Language="CSharp">
+    <ui:InvokeCode ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="ReadMe" Code="/*&#xA;1. 네이밍 규칙&#xA;&#x9;1) Project(메인프로젝트)&#xA;&#x9;- Pascal표기법을 사용&#xA;    - P(업무코드)+'_'+(영문자업무명요약)&#xA;    &#x9;예&gt; 6차 프로젝트, 1번 과제&#xA;               P0601_Template&#xA;   &#xA;&#x9;2) Sequence(하위 시퀀스)&#xA;&#x9;- Pascal표기법을 사용하고 Type을 표시해준다.&#xA;    - {작업순서}+'_'+{작업요약}&#xA;    &#x9;예 &gt; T01_LoginHiworks&#xA;        &#x9;T02_GetMailList&#xA;          ...&#xA;&#x9;- 작업순서를 지정 후(안정화 등)에 추가되는 동작이 있다면 추가로 작업순서를 표시해준다.&#xA;    &#x9;예 &gt; T01_OpenHometax&#xA;        &#x9;T01_01_ClearPopup // 예&gt; 안정화 단계에서 발생한 팝업 처리&#xA;            T01_02_ExistsSystem // 예&gt; 재처리 로직 추가시 작업창 존재여부 추가&#xA;            T02_...&#xA;            &#xA;&#x9;3) 변수&#xA;    - snake 표기법과 Camel표기법을 사용하고 Type을 표시해준다.&#xA;    - {Type} + '_' + {직관적으로 확인가능한 변수명}&#xA;    &#x9;예&gt; string형 : str_urlHiworks&#xA;        &#x9;int형 : int_totalRetryCount&#xA;            DataTable형 : dt_exchangeRate&#xA;&#x9;- 00_Main(메인프로젝트) 에서 사용 하는 변수는 앞에 &quot;p_&quot; 를 붙인다.&#xA;&#x9;&#x9;예&gt; p_int_retryCnt&#xA;&#xA;&#x9;4) 인수&#xA;    - Argument 로 전달받는 변수는 Direction 표시해준다.&#xA;    - {i/o} + '_' + {Type} + '_' + {직관적으로 확인가능한 변수명}&#xA;    &#x9;예&gt; in : i_int_retryCount&#xA;        &#x9;out : o_str_resultCode&#xA;&#x9;&#x9;&#x9;in/out : io_str_typeCode&#xA;   &#xA;&#x9;5) config&#xA;&#x9;- Key &gt; Pascal표기법을 사용&#xA;&#x9;예 &gt; Rpa_Input (직관적으로 확인가능한 변수명)&#xA;    - Comment &gt; Key, Value 값에 대한 주석 입력&#xA;&#xA;&#x9;6) Asset&#xA;   &#x9;- {직관적으로 확인가능한 변수명}&#xA;   &#x9;- Asset 추가 필요할 경우 개발/운영팀 협의 하에 추가&#xA;   &#xA;&#x9;7) Activity(액티비티 명)&#xA;    - 액티비티에 주석으로 기입&#xA;&#x9;- 동작을 명시&#xA;    &#x9;예&gt; 메일쓰기, 엑셀읽기&#xA;&#xA;   8) Queue&#xA;      -. 업무코드와 업무명을 표현해준다.&#xA;      -. P{업무코드}+'_'+{업무명요약}&#xA;         예&gt; P0601_Template&#xA;*/" DisplayName="ReadMe" sap:VirtualizedContainerService.HintSize="1021,196" sap2010:WorkflowViewState.IdRef="InvokeCode_1" Language="CSharp">
       <ui:InvokeCode.Arguments>
         <scg:Dictionary x:TypeArguments="x:String, Argument" />
       </ui:InvokeCode.Arguments>
@@ -134,15 +134,15 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:InvokeWorkflowFile>
-    <ui:InterruptibleDoWhile CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="Main Project" DisplayName="Do While" sap:VirtualizedContainerService.HintSize="1021,1770" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_2">
+    <ui:InterruptibleDoWhile CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="Main Project" DisplayName="Do While" sap:VirtualizedContainerService.HintSize="1021,1875" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_2">
       <ui:InterruptibleDoWhile.Body>
-        <Sequence DisplayName="본문" sap:VirtualizedContainerService.HintSize="987,1576" sap2010:WorkflowViewState.IdRef="Sequence_8">
+        <Sequence DisplayName="본문" sap:VirtualizedContainerService.HintSize="987,1681" sap2010:WorkflowViewState.IdRef="Sequence_8">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="945,1488" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+          <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="945,1593" sap2010:WorkflowViewState.IdRef="TryCatch_2">
             <TryCatch.Try>
               <Flowchart sap2010:Annotation.AnnotationText="Main Project" sap:VirtualizedContainerService.HintSize="907,803" sap2010:WorkflowViewState.IdRef="Flowchart_1">
                 <sap:WorkflowViewStateService.ViewState>
@@ -409,7 +409,7 @@
               <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="911,374" sap2010:WorkflowViewState.IdRef="Catch`1_2">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
@@ -564,6 +564,19 @@
                       </If.Else>
                     </If>
                   </Sequence>
+                </ActivityAction>
+              </Catch>
+              <Catch x:TypeArguments="ui:BusinessRuleException" sap:VirtualizedContainerService.HintSize="911,104" sap2010:WorkflowViewState.IdRef="Catch`1_3">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <ActivityAction x:TypeArguments="ui:BusinessRuleException">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="ui:BusinessRuleException" Name="exception" />
+                  </ActivityAction.Argument>
                 </ActivityAction>
               </Catch>
             </TryCatch.Catches>
