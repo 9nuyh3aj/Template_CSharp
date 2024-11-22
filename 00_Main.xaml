@@ -97,7 +97,7 @@
       <x:Boolean x:Key="ShouldCollapseAll">False</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence DisplayName="Main Project" sap:VirtualizedContainerService.HintSize="1276,2425" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Main Project" sap:VirtualizedContainerService.HintSize="1276,2354" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="scg:Dictionary(x:String, x:String)" Name="p_config" />
       <Variable x:TypeArguments="x:Int32" Name="p_int_retryCnt" />
@@ -110,7 +110,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:InvokeCode ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="ReadMe" Code="/*&#xA;1. 네이밍 규칙&#xA;&#x9;1) Project(메인프로젝트)&#xA;&#x9;- Pascal표기법을 사용&#xA;    - P(업무코드)+'_'+(영문자업무명요약)&#xA;    &#x9;예&gt; 6차 프로젝트, 1번 과제&#xA;               P0601_Template&#xA;   &#xA;&#x9;2) Sequence(하위 시퀀스)&#xA;&#x9;- Pascal표기법을 사용하고 Type을 표시해준다.&#xA;    - {작업순서}+'_'+{작업요약}&#xA;    &#x9;예 &gt; T01_LoginHiworks&#xA;        &#x9;T02_GetMailList&#xA;          ...&#xA;&#x9;- 작업순서를 지정 후(안정화 등)에 추가되는 동작이 있다면 추가로 작업순서를 표시해준다.&#xA;    &#x9;예 &gt; T01_OpenHometax&#xA;        &#x9;T01_01_ClearPopup // 예&gt; 안정화 단계에서 발생한 팝업 처리&#xA;            T01_02_ExistsSystem // 예&gt; 재처리 로직 추가시 작업창 존재여부 추가&#xA;            T02_...&#xA;            &#xA;&#x9;3) 변수&#xA;    - snake 표기법과 Camel표기법을 사용하고 Type을 표시해준다.&#xA;    - {Type} + '_' + {직관적으로 확인가능한 변수명}&#xA;    &#x9;예&gt; string형 : str_urlHiworks&#xA;        &#x9;int형 : int_totalRetryCount&#xA;            DataTable형 : dt_exchangeRate&#xA;&#x9;- 00_Main(메인프로젝트) 에서 사용 하는 변수는 앞에 &quot;p_&quot; 를 붙인다.&#xA;&#x9;&#x9;예&gt; p_int_retryCnt&#xA;&#xA;&#x9;4) 인수&#xA;    - Argument 로 전달받는 변수는 Direction 표시해준다.&#xA;    - {i/o} + '_' + {Type} + '_' + {직관적으로 확인가능한 변수명}&#xA;    &#x9;예&gt; in : i_int_retryCount&#xA;        &#x9;out : o_str_resultCode&#xA;&#x9;&#x9;&#x9;in/out : io_str_typeCode&#xA;   &#xA;&#x9;5) config&#xA;&#x9;- Key &gt; Pascal표기법을 사용&#xA;&#x9;예 &gt; Rpa_Input (직관적으로 확인가능한 변수명)&#xA;    - Comment &gt; Key, Value 값에 대한 주석 입력&#xA;&#xA;&#x9;6) Asset&#xA;   &#x9;- {직관적으로 확인가능한 변수명}&#xA;   &#x9;- Asset 추가 필요할 경우 개발/운영팀 협의 하에 추가&#xA;   &#xA;&#x9;7) Activity(액티비티 명)&#xA;    - 액티비티에 주석으로 기입&#xA;&#x9;- 동작을 명시&#xA;    &#x9;예&gt; 메일쓰기, 엑셀읽기&#xA;&#xA;   8) Queue&#xA;      -. 업무코드와 업무명을 표현해준다.&#xA;      -. P{업무코드}+'_'+{업무명요약}&#xA;         예&gt; P0601_Template&#xA;*/" DisplayName="ReadMe" sap:VirtualizedContainerService.HintSize="706,115" sap2010:WorkflowViewState.IdRef="InvokeCode_1" Language="CSharp">
+    <ui:InvokeCode ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="ReadMe" Code="/*&#xA;1. 네이밍 규칙&#xA;&#x9;1) Project(메인프로젝트)&#xA;&#x9;- Pascal표기법을 사용&#xA;    - P(업무코드)+'_'+(영문자업무명요약)&#xA;    &#x9;예&gt; 6차 프로젝트, 1번 과제&#xA;               P0601_Template&#xA;   &#xA;&#x9;2) Sequence(하위 시퀀스)&#xA;&#x9;- Pascal표기법을 사용하고 Type을 표시해준다.&#xA;    - {작업순서}+'_'+{작업요약}&#xA;    &#x9;예 &gt; T01_LoginHiworks&#xA;        &#x9;T02_GetMailList&#xA;          ...&#xA;&#x9;- 작업순서를 지정 후(안정화 등)에 추가되는 동작이 있다면 추가로 작업순서를 표시해준다.&#xA;    &#x9;예 &gt; T01_OpenHometax&#xA;        &#x9;T01_01_ClearPopup // 예&gt; 안정화 단계에서 발생한 팝업 처리&#xA;            T01_02_ExistsSystem // 예&gt; 재처리 로직 추가시 작업창 존재여부 추가&#xA;            T02_...&#xA;            &#xA;&#x9;3) 변수&#xA;    - snake 표기법과 Camel표기법을 사용하고 Type을 표시해준다.&#xA;    - {Type} + '_' + {직관적으로 확인가능한 변수명}&#xA;    &#x9;예&gt; string형 : str_urlHiworks&#xA;        &#x9;int형 : int_totalRetryCount&#xA;            DataTable형 : dt_exchangeRate&#xA;&#x9;- 00_Main(메인프로젝트) 에서 사용 하는 변수는 앞에 &quot;p_&quot; 를 붙인다.&#xA;&#x9;&#x9;예&gt; p_int_retryCnt&#xA;&#xA;&#x9;4) 인수&#xA;    - Argument 로 전달받는 변수는 Direction 표시해준다.&#xA;    - {i/o} + '_' + {Type} + '_' + {직관적으로 확인가능한 변수명}&#xA;    &#x9;예&gt; in : i_int_retryCount&#xA;        &#x9;out : o_str_resultCode&#xA;&#x9;&#x9;&#x9;in/out : io_str_typeCode&#xA;   &#xA;&#x9;5) config&#xA;&#x9;- Key &gt; Pascal표기법을 사용&#xA;&#x9;예 &gt; Rpa_Input (직관적으로 확인가능한 변수명)&#xA;    - Comment &gt; Key, Value 값에 대한 주석 입력&#xA;&#xA;&#x9;6) Asset&#xA;   &#x9;- {직관적으로 확인가능한 변수명}&#xA;   &#x9;- Asset 추가 필요할 경우 개발/운영팀 협의 하에 추가&#xA;   &#xA;&#x9;7) Activity(액티비티 명)&#xA;    - 액티비티에 주석으로 기입&#xA;&#x9;- 동작을 명시&#xA;    &#x9;예&gt; 메일쓰기, 엑셀읽기&#xA;&#xA;   8) Queue&#xA;      -. 업무코드와 업무명을 표현해준다.&#xA;      -. P{업무코드}+'_'+{업무명요약}&#xA;         예&gt; P0601_Template&#xA;*/" DisplayName="ReadMe" sap:VirtualizedContainerService.HintSize="706,88" sap2010:WorkflowViewState.IdRef="InvokeCode_1" Language="CSharp">
       <ui:InvokeCode.Arguments>
         <scg:Dictionary x:TypeArguments="x:String, Argument" />
       </ui:InvokeCode.Arguments>
@@ -122,11 +122,11 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:InvokeCode>
-    <Sequence DisplayName="Setting" sap:VirtualizedContainerService.HintSize="706,580" sap2010:WorkflowViewState.IdRef="Sequence_19">
+    <Sequence DisplayName="Setting" sap:VirtualizedContainerService.HintSize="706,57" sap2010:WorkflowViewState.IdRef="Sequence_19">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <ui:GetCurrentJobInfo sap2010:Annotation.AnnotationText="프로세스 정보 가져오기" DisplayName="Get Current Job Info" sap:VirtualizedContainerService.HintSize="416,88" sap2010:WorkflowViewState.IdRef="GetCurrentJobInfo_1">
@@ -193,7 +193,7 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </ui:InvokeWorkflowFile>
-      <ui:InvokeProcess ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="작업내용 삭제" DisplayName="COM_KillProcess" sap:VirtualizedContainerService.HintSize="416,88" sap2010:WorkflowViewState.IdRef="InvokeProcess_1" ProcessName="COM_KillProcess">
+      <ui:InvokeProcess ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Kill Process" DisplayName="COM_KillProcess" sap:VirtualizedContainerService.HintSize="416,88" sap2010:WorkflowViewState.IdRef="InvokeProcess_1" ProcessName="COM_KillProcess">
         <ui:InvokeProcess.Arguments>
           <scg:Dictionary x:TypeArguments="x:String, Argument" />
         </ui:InvokeProcess.Arguments>
@@ -205,7 +205,7 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </ui:InvokeProcess>
-      <ui:InvokeCode ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="작업 폴더 생성" Code="// 필요한 폴더 생성하기&#xD;&#xA;// Ex) Input, Output&#xD;&#xA;// 작업 날짜&#xD;&#xA;string workDate = p_date_workDate.ToString(&quot;yyMMdd&quot;);&#xD;&#xA;&#xD;&#xA;// 프로세스 경로&#xD;&#xA;string processPath = @&quot;&quot;;&#xD;&#xA;&#xD;&#xA;// Input (yyMMdd)&#xD;&#xA;string inputPath = Path.Combine(processPath, &quot;Input&quot;, workDate);&#xD;&#xA;&#xD;&#xA;if(!Directory.Exists(inputPath)){&#xD;&#xA;&#x9;Directory.CreateDirectory(inputPath);&#xD;&#xA;&#x9;Console.WriteLine($&quot;Created Dir : {inputPath}&quot;);&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;p_config[&quot;RPA_Input&quot;] = inputPath;&#xD;&#xA;&#xD;&#xA;// Output(yyMMdd)&#xD;&#xA;string OutputPath = Path.Combine(processPath, &quot;Output&quot;, workDate);&#xD;&#xA;&#xD;&#xA;if(!Directory.Exists(OutputPath)){&#xD;&#xA;&#x9;Directory.CreateDirectory(OutputPath);&#xD;&#xA;&#x9;Console.WriteLine($&quot;Created Dir : {OutputPath}&quot;);&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;p_config[&quot;RPA_Output&quot;] = OutputPath;" DisplayName="Invoke Code" sap:VirtualizedContainerService.HintSize="416,79" sap2010:WorkflowViewState.IdRef="InvokeCode_2" Language="CSharp">
+      <ui:InvokeCode ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="작업 폴더 생성" Code="// 필요한 폴더 생성하기&#xA;// Ex) Input, Output&#xA;// 작업 날짜&#xA;string workDate = p_date_workDate.ToString(&quot;yyMMdd&quot;);&#xA;&#xA;// 프로세스 경로&#xA;string processPath = @&quot;&quot;;&#xA;&#xA;// Input (yyMMdd)&#xA;string inputPath = Path.Combine(processPath, &quot;Input&quot;, workDate);&#xA;&#xA;if(!Directory.Exists(inputPath)){&#xA;&#x9;Directory.CreateDirectory(inputPath);&#xA;&#x9;Console.WriteLine($&quot;Created Dir : {inputPath}&quot;);&#xA;}&#xA;&#xA;p_config[&quot;RPA_Input&quot;] = inputPath;&#xA;&#xA;// Output(yyMMdd)&#xA;string OutputPath = Path.Combine(processPath, &quot;Output&quot;, workDate);&#xA;&#xA;if(!Directory.Exists(OutputPath)){&#xA;&#x9;Directory.CreateDirectory(OutputPath);&#xA;&#x9;Console.WriteLine($&quot;Created Dir : {OutputPath}&quot;);&#xA;}&#xA;&#xA;p_config[&quot;RPA_Output&quot;] = OutputPath;" DisplayName="Invoke Code" sap:VirtualizedContainerService.HintSize="416,79" sap2010:WorkflowViewState.IdRef="InvokeCode_2" Language="CSharp">
         <ui:InvokeCode.Arguments>
           <InOutArgument x:TypeArguments="scg:Dictionary(x:String, x:String)" x:Key="p_config">
             <CSharpReference x:TypeArguments="scg:Dictionary(x:String, x:String)" sap2010:WorkflowViewState.IdRef="CSharpReference`1_37">p_config</CSharpReference>
@@ -223,15 +223,15 @@
         </sap:WorkflowViewStateService.ViewState>
       </ui:InvokeCode>
     </Sequence>
-    <ui:InterruptibleDoWhile CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="Main Project" DisplayName="Do While" sap:VirtualizedContainerService.HintSize="706,1707" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_2">
+    <ui:InterruptibleDoWhile CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="Main Project" DisplayName="Do While" sap:VirtualizedContainerService.HintSize="706,2186" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_2">
       <ui:InterruptibleDoWhile.Body>
-        <Sequence DisplayName="본문" sap:VirtualizedContainerService.HintSize="672,1539" sap2010:WorkflowViewState.IdRef="Sequence_8">
+        <Sequence DisplayName="본문" sap:VirtualizedContainerService.HintSize="672,2018" sap2010:WorkflowViewState.IdRef="Sequence_8">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="638,1479" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+          <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="638,1958" sap2010:WorkflowViewState.IdRef="TryCatch_2">
             <TryCatch.Try>
               <Flowchart sap2010:Annotation.AnnotationText="Main Project" sap:VirtualizedContainerService.HintSize="600,656" sap2010:WorkflowViewState.IdRef="Flowchart_1">
                 <sap:WorkflowViewStateService.ViewState>
@@ -453,10 +453,10 @@
               </Flowchart>
             </TryCatch.Try>
             <TryCatch.Catches>
-              <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="604,385" sap2010:WorkflowViewState.IdRef="Catch`1_2">
+              <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="604,864" sap2010:WorkflowViewState.IdRef="Catch`1_2">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
@@ -464,7 +464,7 @@
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
                   </ActivityAction.Argument>
-                  <Sequence sap2010:Annotation.AnnotationText="재수행(N회 반복 후 최종에러 처리)" DisplayName="재수행" sap:VirtualizedContainerService.HintSize="416,315" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                  <Sequence sap2010:Annotation.AnnotationText="재수행(N회 반복 후 최종에러 처리)" DisplayName="재수행" sap:VirtualizedContainerService.HintSize="484,794" sap2010:WorkflowViewState.IdRef="Sequence_11">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -472,7 +472,7 @@
                         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <WriteLine sap2010:Annotation.AnnotationText="에러메세지" DisplayName="Error Msg" sap:VirtualizedContainerService.HintSize="382,88" sap2010:WorkflowViewState.IdRef="WriteLine_9">
+                    <WriteLine sap2010:Annotation.AnnotationText="에러메세지" DisplayName="Error Msg" sap:VirtualizedContainerService.HintSize="450,88" sap2010:WorkflowViewState.IdRef="WriteLine_9">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -484,7 +484,7 @@
                         <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_67">$"Error Msg : {exception.Message}"</CSharpValue>
                       </InArgument>
                     </WriteLine>
-                    <ui:LogMessage DisplayName="Error Msg" sap:VirtualizedContainerService.HintSize="382,57" sap2010:WorkflowViewState.IdRef="LogMessage_5">
+                    <ui:LogMessage DisplayName="Error Msg" sap:VirtualizedContainerService.HintSize="450,57" sap2010:WorkflowViewState.IdRef="LogMessage_5">
                       <ui:LogMessage.Level>
                         <InArgument x:TypeArguments="ui:LogLevel">
                           <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_68">UiPath.Core.Activities.LogLevel.Error</CSharpValue>
@@ -502,7 +502,7 @@
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                     </ui:LogMessage>
-                    <If sap2010:Annotation.AnnotationText="재수행 횟수 확인" sap:VirtualizedContainerService.HintSize="382,79" sap2010:WorkflowViewState.IdRef="If_1">
+                    <If sap2010:Annotation.AnnotationText="재수행 횟수 확인" sap:VirtualizedContainerService.HintSize="450,558" sap2010:WorkflowViewState.IdRef="If_1">
                       <If.Condition>
                         <InArgument x:TypeArguments="x:Boolean">
                           <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_73">p_int_retryCnt &lt; Convert.ToInt32(p_config["MaxRetryCnt"].ToString())</CSharpValue>
@@ -511,8 +511,8 @@
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                          <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                       <If.Then>
@@ -565,7 +565,9 @@
                               <InArgument x:TypeArguments="scg:Dictionary(x:String, x:String)" x:Key="i_config">
                                 <CSharpValue x:TypeArguments="scg:Dictionary(x:String, x:String)" sap2010:WorkflowViewState.IdRef="CSharpValue`1_60">p_config</CSharpValue>
                               </InArgument>
-                              <InArgument x:TypeArguments="x:Boolean" x:Key="i_bol_workDone">False</InArgument>
+                              <InArgument x:TypeArguments="x:Boolean" x:Key="i_bol_workDone">
+                                <Literal x:TypeArguments="x:Boolean" />
+                              </InArgument>
                             </ui:InvokeWorkflowFile.Arguments>
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
